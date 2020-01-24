@@ -5,7 +5,7 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -14,7 +14,8 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        String resultStr = baseValue + valueToBeAdded;
+        return resultStr;
     }
 
     /**
@@ -22,7 +23,11 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        String s = "";
+        for (int i = valueToBeReversed.length() - 1; i >= 0; i--) {
+            s += valueToBeReversed.charAt(i);
+        }
+        return s;
     }
 
     /**
@@ -30,7 +35,13 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        char c;
+        if (word.length() % 2 == 0) {
+            c = word.charAt((word.length()/2 - 1));
+        } else {
+            c = word.charAt((word.length()-1)/2);
+        }
+        return c;
     }
 
     /**
@@ -39,7 +50,14 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        sb.append(value);
+        for (int i = 0; i < sb.length(); i++) {
+            if (sb.charAt(i) == charToRemove) {
+                sb.deleteCharAt(i);
+            }
+        }
+        return sb.toString();
     }
 
     /**
@@ -47,6 +65,7 @@ public class StringUtilities {
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        String[] newString = sentence.split(" ");
+        return newString[newString.length - 1];
     }
 }
